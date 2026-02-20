@@ -13,7 +13,7 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    mainFields: ['main'],
+    mainFields: ['browser', 'module', 'main'],
   },
   devServer: {
     disableHostCheck: true,
