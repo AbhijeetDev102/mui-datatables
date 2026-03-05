@@ -71,12 +71,10 @@ jobs:
 
       - name: Publish Package
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ''  # Explicitly empty for install
         run: |
           set -e
           npm publish --provenance --access public --verbose
-        env:
-          NODE_AUTH_TOKEN: ''  # Explicitly empty for install
 
       - name: Pull changes from remote
         run: git pull origin master
